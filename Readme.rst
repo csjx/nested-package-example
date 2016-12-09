@@ -11,7 +11,6 @@ To test DataONE nested package indexing, I've created the following directory st
       └── C.2
       
 Each directory represents a package, with A.0 being the root, and B* and C* being children and grandchildren.  Each has a TXT data file, EML metadata file, and an RDF resource map, along with their requisite system metadata documents:
-
 ..code::
 
   A.0/
