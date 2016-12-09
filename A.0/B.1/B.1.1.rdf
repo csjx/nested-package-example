@@ -1,0 +1,55 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:cito="http://purl.org/spar/cito/" > 
+
+
+    <!-- Resource Map -->
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf">
+      <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-12-08T09:25:27.028-07:00</dcterms:modified>
+      <ore:describes rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf#aggregation"/>
+      <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+      <dc:creator rdf:nodeID="D1JavaClient"/>
+      <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.1.1.rdf</dcterms:identifier>
+    </rdf:Description>
+
+    <!-- Aggregation -->
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf#aggregation">
+      <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+      <ore:isDescribedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf"/>
+      <dc:title>B.1 Collection</dc:title>
+      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.eml.xml"/>
+      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.data.txt"/>
+      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/C.1.1.rdf"/>
+    </rdf:Description>
+
+    <!-- Metadata -->
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.eml.xml">
+      <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf#aggregation</ore:isAggregatedBy>
+      <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.1.eml.xml</dcterms:identifier>
+      <cito:documents rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.data.txt"/>
+    </rdf:Description>
+    
+    <!-- Data -->
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.data.txt">
+      <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf#aggregation</ore:isAggregatedBy>
+      <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.1.data.txt</dcterms:identifier>
+      <cito:isDocumentedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.eml.xml"/>
+    </rdf:Description>
+
+    <!-- Nested Resource Maps -->
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/C.1.1.rdf">
+        <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf#aggregation</ore:isAggregatedBy>
+        <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.1.1.rdf</dcterms:identifier>
+    </rdf:Description>
+    
+    <!-- Agent -->
+    <rdf:Description rdf:nodeID="D1JavaClient">
+      <foaf:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataONE Java Client Library</foaf:name>
+      <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+    </rdf:Description>
+</rdf:RDF>

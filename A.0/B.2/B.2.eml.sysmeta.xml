@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<d1_v2.0:systemMetadata xmlns:d1_v2.0="http://ns.dataone.org/service/types/v2.0" xmlns:d1="http://ns.dataone.org/service/types/v1">
+    <serialVersion>1</serialVersion>
+    <identifier>B.2.eml.xml</identifier>
+    <formatId>eml://ecoinformatics.org/eml-2.1.1</formatId>
+    <size>4617</size>
+    <checksum algorithm="SHA256">7105206826619f1ef3caf7807dcc71308cc5cd618552f4ba9ab42a09f9ea2087</checksum>
+    <submitter>http://orcid.org/0000-0002-8121-2341</submitter>
+    <rightsHolder>http://orcid.org/0000-0002-8121-2341</rightsHolder>
+    <accessPolicy>
+        <allow>
+            <subject>public</subject>
+            <permission>read</permission>
+        </allow>
+    </accessPolicy>
+    <replicationPolicy replicationAllowed="false"/>
+    <archived>false</archived>
+    <dateUploaded>2016-02-27T00:00:00.000+00:00</dateUploaded>
+    <dateSysMetadataModified>2016-02-26T16:25:25.812+00:00</dateSysMetadataModified>
+    <originMemberNode>urn:node:mnTestARCTIC</originMemberNode>
+    <authoritativeMemberNode>urn:node:mnTestARCTIC</authoritativeMemberNode>
+    <fileName>B.2.eml.xml</fileName>
+</d1_v2.0:systemMetadata>

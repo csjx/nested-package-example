@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:ds="eml://ecoinformatics.org/dataset-2.1.1" 
+    xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.1" 
+    packageId="C.1.eml.xml" system="knb" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 eml.xsd">
+    <dataset>
+        <title>C.1 Title</title>
+        <creator>
+            <individualName>
+                <givenName>Christopher</givenName>
+                <surName>Jones</surName>
+            </individualName>
+            <organizationName>NCEAS</organizationName>
+        </creator>
+        <metadataProvider>
+            <individualName>
+                <givenName>Christopher</givenName>
+                <surName>Jones</surName>
+            </individualName>
+        </metadataProvider>
+        <associatedParty>
+            <individualName>
+                <givenName>Christopher</givenName>
+                <surName>Jones</surName>
+            </individualName>
+            <role>associatedParty</role>
+        </associatedParty>
+        <pubDate>2016-02-26</pubDate>
+        <abstract>
+            <para> Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion
+            daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo beet greens corn soko
+            endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard
+            greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko
+            zucchini. Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce
+            kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane
+            kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root
+            water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin
+            onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss
+            chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori
+            azuki bean chickweed potato bell pepper artichoke.</para>
+        </abstract>
+        <intellectualRights>
+            <para>no restrictions</para>
+        </intellectualRights>
+        <distribution>
+            <offline>
+                <mediumName>digital</mediumName>
+            </offline>
+        </distribution>
+        <coverage>
+            <temporalCoverage>
+                <rangeOfDates>
+                    <beginDate>
+                        <calendarDate>2000-05-23</calendarDate>
+                    </beginDate>
+                    <endDate>
+                        <calendarDate>2000-06-18</calendarDate>
+                    </endDate>
+                </rangeOfDates>
+            </temporalCoverage>
+            <geographicCoverage>
+                <geographicDescription>C.1</geographicDescription>
+                <boundingCoordinates>
+                    <westBoundingCoordinate>-34.3667</westBoundingCoordinate>
+                    <eastBoundingCoordinate>-34.3667</eastBoundingCoordinate>
+                    <northBoundingCoordinate>34.3667</northBoundingCoordinate>
+                    <southBoundingCoordinate>34.3667</southBoundingCoordinate>
+                </boundingCoordinates>
+            </geographicCoverage>
+        </coverage>
+        <contact>
+            <individualName>
+                <givenName>Christopher</givenName>
+                <surName>Jones</surName>
+            </individualName>
+            <organizationName>NCEAS</organizationName>
+        </contact>
+        <otherEntity id="762f4f89172c9e53c44b4cb7800030714ff244c0001" scope="document">
+            <entityName>C.1.data.txt</entityName>
+            <physical scope="document">
+                <objectName>C.1.data.txt</objectName>
+                <size>14</size>
+                <dataFormat>
+                    <externallyDefinedFormat>
+                        <formatName>text/plain</formatName>
+                    </externallyDefinedFormat>
+                </dataFormat>
+                <distribution id="762f4f89172c9e53c44b4cb7800030714ff244c0002" scope="document">
+                    <online>
+                        <url function="download">ecogrid://knb/C.1.data.txt</url>
+                    </online>
+                </distribution>
+            </physical>
+            <entityType>Other</entityType>
+        </otherEntity>
+    </dataset>
+</eml:eml>
