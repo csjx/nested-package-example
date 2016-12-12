@@ -8,49 +8,53 @@
     xmlns:cito="http://purl.org/spar/cito/" > 
 
 
-    <!-- Resource Map --->
-    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf">
+    <!-- Resource Map -->
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf">
       <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-12-08T09:25:27.028-07:00</dcterms:modified>
-      <ore:describes rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf#aggregation"/>
+      <ore:describes rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf#aggregation"/>
       <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
       <dc:creator rdf:nodeID="D1JavaClient"/>
-      <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.0.rdf</dcterms:identifier>
+      <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.0.3.rdf</dcterms:identifier>
     </rdf:Description>
 
     <!-- Aggregation -->
-    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf#aggregation">
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf#aggregation">
       <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
-      <ore:isDescribedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf"/>
+      <ore:isDescribedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf"/>
       <dc:title>A.0 Collection</dc:title>
       <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.eml.xml"/>
       <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.data.txt"/>
-      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.rdf"/>
-      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.2.rdf"/>
+      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf"/>
+      <ore:aggregates rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.2.1.rdf"/>
     </rdf:Description>
 
     <!-- Metadata -->
     <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.eml.xml">
-      <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf#aggregation</ore:isAggregatedBy>
+      <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf#aggregation</ore:isAggregatedBy>
       <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.0.eml.xml</dcterms:identifier>
       <cito:documents rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.data.txt"/>
+      <cito:documents rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.3.rdf"/>
+      <cito:documents rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/B.2.3.rdf"/>
     </rdf:Description>
     
     <!-- Data -->
     <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.data.txt">
-      <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf#aggregation</ore:isAggregatedBy>
+      <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf#aggregation</ore:isAggregatedBy>
       <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.0.data.txt</dcterms:identifier>
       <cito:isDocumentedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.eml.xml"/>
     </rdf:Description>
 
     <!-- Nested Resource Maps -->
-    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.rdf">
-        <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf#aggregation</ore:isAggregatedBy>
-        <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.1.rdf</dcterms:identifier>
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.1.1.rdf">
+        <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf#aggregation</ore:isAggregatedBy>
+        <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.1.1.rdf</dcterms:identifier>
+        <cito:isDocumentedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.eml.xml"/>
     </rdf:Description>
     
-    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.2.rdf">
-        <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.rdf#aggregation</ore:isAggregatedBy>
-        <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.2.rdf</dcterms:identifier>
+    <rdf:Description rdf:about="https://cn-stage.test.dataone.org/cn/v1/resolve/B.2.1.rdf">
+        <ore:isAggregatedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.3.rdf#aggregation</ore:isAggregatedBy>
+        <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.2.1.rdf</dcterms:identifier>
+        <cito:isDocumentedBy rdf:resource="https://cn-stage.test.dataone.org/cn/v1/resolve/A.0.eml.xml"/>
     </rdf:Description>
     
     <!-- Agent -->

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <d1_v2.0:systemMetadata xmlns:d1_v2.0="http://ns.dataone.org/service/types/v2.0" xmlns:d1="http://ns.dataone.org/service/types/v1">
     <serialVersion>1</serialVersion>
-    <identifier>A.0.2.rdf</identifier>
+    <identifier>C.1.3.rdf</identifier>
     <formatId>http://www.openarchives.org/ore/terms</formatId>
-    <size>4337</size>
-    <checksum algorithm="SHA256">6aafe66d736091ec7630f327eef4f7c1cf37ba5ed6022ff18ff11ece3bcc4e4d</checksum>
+    <size>2993</size>
+    <checksum algorithm="SHA256">f820cd5b5f72cfc382512da83ceb26a7e11d1cd7b61e67d31268a493edfba52b</checksum>
     <submitter>http://orcid.org/0000-0002-8121-2341</submitter>
     <rightsHolder>http://orcid.org/0000-0002-8121-2341</rightsHolder>
     <accessPolicy>
@@ -19,5 +19,5 @@
     <dateSysMetadataModified>2016-02-26T16:25:25.812+00:00</dateSysMetadataModified>
     <originMemberNode>urn:node:mnTestARCTIC</originMemberNode>
     <authoritativeMemberNode>urn:node:mnTestARCTIC</authoritativeMemberNode>
-    <fileName>A.0.2.rdf</fileName>
+    <fileName>C.1.3.rdf</fileName>
 </d1_v2.0:systemMetadata>
