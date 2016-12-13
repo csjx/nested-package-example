@@ -1,7 +1,6 @@
 ﻿#!/bin/bash
 
 token="<token>";
-
 mn_url="https://dev.christopherjones.co/metacat/d1/mn/v2";
 data_dir="/Users/cjones/d1-test/arctic/nested-package-test";
 
@@ -43,18 +42,6 @@ cd ${data_dir};
 # done
 
 # Upload the resource maps
-# 3906 ./A.0/A.0.rdf
-# 3409 ./A.0/B.1/B.1.rdf
-# 2878 ./A.0/B.1/C.1/C.1.rdf
-# 3409 ./A.0/B.2/B.2.rdf
-# 2878 ./A.0/B.2/C.2/C.2.rdf
-
-# 2f7231d6ed048e289bf70c60a67ec64ef35d54d347282af9fe00e7dd2b166dca  ./A.0/A.0.rdf
-# 65a430f33ae4d00851a24462d8536ef6d32d1e0620de48e6a49a50e88401f130  ./A.0/B.1/B.1.rdf
-# 9ac48550db5c0e236a56567511ba015a7dba572fa082d0bd2c5e90c7addf732a  ./A.0/B.1/C.1/C.1.rdf
-# 2217840336169bf0885563e2c7f0b1accc4523e0a775ce3bbd6189941711afcf  ./A.0/B.2/B.2.rdf
-# 715bbe69fde8446a95164597bf44c5f2875e75f021cca2a1e42a2cfbdf93f8d5  ./A.0/B.2/C.2/C.2.rdf
-
 # for file in $(find . -name "*rdf" -print); do
 #     pid=$(basename ${file});
 #     dir=$(dirname ${file});
@@ -74,28 +61,119 @@ cd ${data_dir};
 # done
 
 # Update the resource maps (typo in comment on line 11)
-# 3935 ./A.0/A.0.1.rdf
-# 3430 ./A.0/B.1/B.1.1.rdf
-# 2891 ./A.0/B.1/C.1/C.1.1.rdf
-# 3430 ./A.0/B.2/B.2.1.rdf
-# 2891 ./A.0/B.2/C.2/C.2.1.rdf
+# for file in $(find . -name "*1.rdf" -print); do
+#     newPid=$(basename ${file});
+#     dir=$(dirname ${file});
+#     pid=${newPid%.1.rdf}.rdf;
+#     sysmeta="${dir}/${newPid%.rdf}.rdf.sysmeta.xml";
+#     echo "object: ${file}";
+#     echo "sysmeta: ${sysmeta}";
+#     echo "pid: ${pid}";
+#     echo "newPid: ${newPid}";
+#     
+#     curl -v \
+#         -X PUT \
+#         -H "Authorization: Bearer ${token}" \
+#         -F "pid=${pid}" \
+#         -F "newPid=${newPid}" \
+#         -F "sysmeta=@${sysmeta}" \
+#         -F "object=@${file}" \
+#         ${mn_url}/object/${pid}
+#     echo "------------";
+# done
 
-# 3f9f234a3aa0289622a4a0106c599cfaf4983284c519716e59c651aaa9725e35  ./A.0/A.0.1.rdf
-# 607fcc43cd6ea48c3cb4a9212c9a8e23f68d9e40fab3bf70ff5d68073c35cfa5  ./A.0/B.1/B.1.1.rdf
-# ffe2b5663a35228af19eea1f9c0f7d2e65fede6c17cdf675a6ed8125250495ec  ./A.0/B.1/C.1/C.1.1.rdf
-# 45f3a355cf6053eeabb3a3dce99944a64323452ed44b7e0f2ffb4e8c18921537  ./A.0/B.2/B.2.1.rdf
-# 8a1cac2d1596d5a19ec773e4b6d9e30d0f1033b6beca2022e0cb08174ea9af60  ./A.0/B.2/C.2/C.2.1.rdf
-for file in $(find . -name "*1.rdf" -print); do
-    newPid=$(basename ${file});
+# Update the resource maps 
+# Revise to version .2 to add cito:documents/cito:isDocumentedBy for nested resource maps (indexing bug)
+# for file in $(find . -name "*2.rdf" -print); do
+#     
+#     newPid=$(basename ${file});
+#     dir=$(dirname ${file});
+#     pid=${newPid%.2.rdf}.1.rdf;
+#     sysmeta="${dir}/${newPid%.rdf}.rdf.sysmeta.xml";
+#     skip=(A.0.rdf B.1.rdf B.2.rdf C.1.rdf C.2.rdf);
+#     case "${skip[@]}" in *"${pid}"*) 
+#         echo "Skipping ${pid}";
+#         echo "-----------";
+#         continue ;;
+#     esac
+#     echo "object: ${file}";
+#     echo "sysmeta: ${sysmeta}";
+#     echo "pid: ${pid}";
+#     echo "newPid: ${newPid}";
+#     
+#     curl -k -v \
+#         -X PUT \
+#         -H "Authorization: Bearer ${token}" \
+#         -F "pid=${pid}" \
+#         -F "newPid=${newPid}" \
+#         -F "sysmeta=@${sysmeta}" \
+#         -F "object=@${file}" \
+#         ${mn_url}/object/${pid}
+#     echo "------------";
+# done
+
+# That didn't work.  Update the resource maps to state the EML cito:documents the nested reource maps
+# for file in $(find . -name "*.rdf" -print); do
+#     
+#     basePid=$(basename ${file});
+#     newPid=${basePid%.rdf}.3.rdf;
+#     dir=$(dirname ${file});
+#     pid=${basePid%.rdf}.2.rdf;
+#     sysmeta="${dir}/${basePid%.rdf}.rdf.sysmeta.xml";
+#     # skip=(A.0.rdf B.1.rdf B.2.rdf C.1.rdf C.2.rdf);
+#     # case "${skip[@]}" in *"${pid}"*) 
+#     #     echo "Skipping ${pid}";
+#     #     echo "-----------";
+#     #     continue ;;
+#     # esac
+#     echo "object: ${file}";
+#     echo "sysmeta: ${sysmeta}";
+#     echo "pid: ${pid}";
+#     echo "newPid: ${newPid}";
+#     
+#     curl -k -v \
+#         -X PUT \
+#         -H "Authorization: Bearer ${token}" \
+#         -F "pid=${pid}" \
+#         -F "newPid=${newPid}" \
+#         -F "sysmeta=@${sysmeta}" \
+#         -F "object=@${file}" \
+#         ${mn_url}/object/${pid}
+#     echo "------------";
+# done
+
+# Fix more errors in the resource maps
+# cjones@ridgway:nested-package-test$ find A.0/ -name "*rdf" -exec wc -c {} \;
+# 4340 A.0/A.0.rdf
+# 3633 A.0/B.1/B.1.rdf
+# 2891 A.0/B.1/C.1/C.1.rdf
+# 3633 A.0/B.2/B.2.rdf
+# 2891 A.0/B.2/C.2/C.2.rdf
+# cjones@ridgway:nested-package-test$ find A.0 -name "*rdf" -exec shasum -a 256 {} \;
+# 119d694ebe30ca230ca99893b4fe371a914276d589b4f53b998104220bfe18c9  A.0/A.0.rdf
+# ee997c41b81a876ea1f4298dca7d9ab78fbcc1a47cdbf2323043a6959043cb8c  A.0/B.1/B.1.rdf
+# 4e7e441a8ee51e6048aed04875d17dbf663b0140346aeb06411daf1d5453c4da  A.0/B.1/C.1/C.1.rdf
+# 28ad6ca3d5003e8ca4fe1c60ef35c4d45cf55756c12cb0dead98619365a75013  A.0/B.2/B.2.rdf
+# fa6038c721cff6ed284c0a13e5b3df1e06a35c7288c576e580b063791b0cfa20  A.0/B.2/C.2/C.2.rdf
+for file in $(find . -name "*.rdf" -print); do
+    
+    basePid=$(basename ${file});
+    newPid=${basePid%.rdf}.4.rdf;
     dir=$(dirname ${file});
-    pid=${newPid%.1.rdf}.rdf;
-    sysmeta="${dir}/${newPid%.rdf}.rdf.sysmeta.xml";
+    pid=${basePid%.rdf}.3.rdf;
+    sysmeta="${dir}/${basePid%.rdf}.rdf.sysmeta.xml";
+    # skip=(A.0.rdf B.1.rdf B.2.rdf C.1.rdf C.2.rdf);
+    # case "${skip[@]}" in *"${pid}"*) 
+    #     echo "Skipping ${pid}";
+    #     echo "-----------";
+    #     continue ;;
+    # esac
     echo "object: ${file}";
     echo "sysmeta: ${sysmeta}";
     echo "pid: ${pid}";
     echo "newPid: ${newPid}";
     
-    curl -v \
+    curl -k -v \
         -X PUT \
         -H "Authorization: Bearer ${token}" \
         -F "pid=${pid}" \
